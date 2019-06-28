@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMap from './GoogleMap';
+import FormContat from "./FormContact";
 
 class Contact extends Component {
     render() {
@@ -19,52 +20,15 @@ class Contact extends Component {
                         </article>
                     </div>
                 </section>
-
                 <section className="bg-white pt-5 pb-5">
                     <div className="container">
                         <div className="row">
                             <div className="col-12 col-md-6">
                                 <h5 className="mb-4">LEAVE US A MESSAGE</h5>
-                                <div className="container-form secondary-form">
-                                    <form>
-                                        <div className="form-group">
-                                            <label htmlFor="name">Name</label>
-                                            <input className="form-control" type="text" id="name" placeholder="Enter your name" name="cf_name" required="required" />
-                                        </div>
-                                        <div className="form-group">
-                                            <label htmlFor="email">Email address</label>
-                                            <input className="form-control" placeholder="Enter your email address" type="email" id="email" name="cf_email" required="required" />
-                                        </div>
-                                        <div className="form-group">
-                                            <label htmlFor="phone">Phone</label>
-                                            <input className="form-control" placeholder="Enter your phone" type="tel" id="phone" name="cf_phone" />
-                                        </div>
-                                        <div className="form-group">
-                                            <label htmlFor="company">Company</label>
-                                            <input className="form-control" placeholder="Enter your company" type="text" id="company" name="cf_company" />
-                                        </div>
-                                        <div className="form-group">
-                                            <label htmlFor="subject">Subject</label>
-                                            <select className="form-control" id="subject" name="cf_subject" required="required">
-                                                <option value="">Please select a subject</option>
-                                                <option value="Requesting information on Dealer Signup">Requesting information on Dealer Signup</option>
-                                                <option value="Account Inquiry (Payments, Payoffs or Refunds)">Account Inquiry (Payments, Payoffs or Refunds)</option>
-                                                <option value="Resetting Password or Access to Website">Resetting Password or Access to Website</option>
-                                                <option value="Requesting Paperless Statements">Requesting Paperless Statements</option>
-                                                <option value="Service Finance shows as an inquiry on my credit">Service Finance shows as an inquiry on my credit</option>
-                                                <option value="Dispute Credit Reporting (Late Payments)">Dispute Credit Reporting (Late Payments)</option>
-                                            </select>
-                                        </div>
-                                        <div className="form-group">
-                                            <label htmlFor="comments">Comments</label>
-                                            <textarea rows="5" className="form-control" placeholder="Enter your Comments Here" id="comments" name="cf_comments" required="required"></textarea>
-                                        </div>
-                                        <button type="submit" className="btn btn-form-primary">Send</button>
-                                    </form>
-                                </div>
+                                <FormContat />
                             </div>
                             <div className="col-12 col-md-6">
-                                <h5 className="mb-4">OUR ADDRESS</h5>
+                                <h5 className="mb-4">OUR ADDRESS AND CONTACTS</h5>
                                 <div className="bg-light p-3">
                                     <strong>Address:</strong> 555 S. Federal Hwy, #200 Boca Raton, FL 33432<br />
                                     <strong>Phone:</strong> (866) 254 ‒ 0497<br />
