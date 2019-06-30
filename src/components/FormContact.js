@@ -44,6 +44,19 @@ class FormContact extends Component {
             }
         }
 
+        //Validation Phone
+        if (!fields["phone"]) {
+            formIsValid = false;
+            errors["phone"] = "Cannot be empty";
+        }
+
+        if (typeof fields["phone"] !== "undefined") {
+            if (!fields["phone"].match(/^(1\s?)?((\([0-9]{3}\))|[0-9]{3})[\s\-]?[\0-9]{3}[\s\-]?[0-9]{4}$/)) {
+                formIsValid = false;
+                errors["phone"] = "Phone is not valid.";
+            }
+        }
+
         this.setState({ errors: errors });
         return formIsValid;
     }
@@ -55,7 +68,7 @@ class FormContact extends Component {
             this.setState({ messageOk: true });
             this.setState({ messageFail: false });
 
-            //Here into the Ajax request...
+            //Here AJAX requests
             setTimeout(() => {
                 this.setState({loading: false});
             }, 2000);
@@ -96,8 +109,9 @@ class FormContact extends Component {
                         <div className="invalid-feedback">{this.state.errors["email"]}</div>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="phone">Phone:</label>
+                        <label htmlFor="phone">Phone*:</label>
                         <input className="form-control" placeholder="Enter your phone" type="tel" id="phone" onChange={this.handleChange.bind(this, "phone")} value={this.state.fields["phone"]} />
+                        <div className="invalid-feedback">{this.state.errors["phone"]}</div>
                     </div>
                     <div className="form-group">
                         <label htmlFor="company">Company:</label>
