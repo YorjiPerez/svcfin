@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import $ from 'jquery';
 
 class FormContact extends Component {
     constructor(props) {
@@ -8,8 +7,9 @@ class FormContact extends Component {
         this.state = {
             fields: {},
             errors: {},
-            messageOk: "All your data has been sent correctly, one of our agents will contact you, Thank you !",
-            messageFail: "You have entered incorrect information in the form, please check the error messages"
+            messageOk: false,
+            messageFail: false,
+            loading: false
         }
     }
 
@@ -50,33 +50,21 @@ class FormContact extends Component {
 
     contactSubmit(e) {
         e.preventDefault();
+
         if (this.handleValidation()) {
-            $('.alert-danger').addClass('d-none');
-            $('.spinner-content').removeClass('d-none');
+            this.setState({ messageOk: true });
+            this.setState({ messageFail: false });
 
-            console.log(this.state.fields);
+            //Here into the Ajax request...
+            setTimeout(() => {
+                this.setState({loading: false});
+            }, 2000);
+            this.setState({loading: true});
+            this.setState({ fields: { name: "", email: "", phone: "", subject: "", message: "", company: "" } })
 
-            setTimeout(
-                function () {
-                    $('.spinner-content').addClass('d-none');
-                    $('.alert-success').removeClass('d-none');
-                   
-                }, 2000);
-            /*    
-            fetch('localhost:3000/api/send/form/${this.state.fields}', {
-                method: 'POST'
-            })
-                .then(res => res.json())
-                .then(res => {
-                    if (res.success) {
-
-                        // Reponse
-
-                    }
-                });*/
         } else {
-            $('.alert-success').addClass('d-none');
-            $('.alert-danger').removeClass('d-none');
+            this.setState({ messageOk: false });
+            this.setState({ messageFail: true });
         }
 
     }
@@ -90,13 +78,13 @@ class FormContact extends Component {
     render() {
         return (
             <div className="container-form secondary-form">
-                <div className="alert alert-danger d-none" role="alert">
-                    {this.state["messageFail"]}
-                </div>
-                <div className="alert alert-success d-none" role="alert">
-                    {this.state["messageOk"]}
-                </div>
-                <form name="contactform" className="contact-form" onSubmit={this.contactSubmit.bind(this)}>
+                {this.state["messageFail"]&&<div className="alert alert-danger" role="alert">
+                  You have entered incorrect information in the form, please check the error messages
+                </div>}
+                {this.state["messageOk"]&&<div className="alert alert-success" role="alert">
+                 All your data has been sent correctly, one of our agents will contact you, Thank you !
+                </div>}
+                <form name="contactform" className="contact-form" onSubmit={this.contactSubmit.bind(this)} noValidate>
                     <div className="form-group">
                         <label htmlFor="name">Name:*</label>
                         <input className="form-control" placeholder="Enter your Name" type="text" id="name" onChange={this.handleChange.bind(this, "name")} value={this.state.fields["name"]} required="required" />
@@ -113,7 +101,7 @@ class FormContact extends Component {
                     </div>
                     <div className="form-group">
                         <label htmlFor="company">Company:</label>
-                        <input className="form-control" placeholder="Enter your company" type="text" id="company" name="cf_company" />
+                        <input className="form-control" placeholder="Enter your company" type="text" id="company" name="cf_company" onChange={this.handleChange.bind(this, "company")} value={this.state.fields["company"]} />
                     </div>
                     <div className="form-group">
                         <label htmlFor="subject">Subject:*</label>
@@ -129,13 +117,15 @@ class FormContact extends Component {
                     </div>
                     <div className="form-group">
                         <label htmlFor="comments">Comments:*</label>
-                        <textarea rows="5" className="form-control comments" placeholder="Enter your Comments Here" id="comments" onChange={this.handleChange.bind(this, "message")} required="required">{this.state.fields["message"]}</textarea>
+                        <textarea rows="5" className="form-control comments" placeholder="Enter your Comments Here" id="comments" onChange={this.handleChange.bind(this, "message")} required="required" value={this.state.fields["message"]}></textarea>
                     </div>
                     <button type="submit" className="btn btn-form-primary" value="Submit">Send Message</button>
                 </form>
-                <div className="spinner-content d-none">
+
+                {this.state.loading&&
+                <div className="spinner-content">
                     <div className="spinner-grow text-success" role="status"></div>
-                </div>
+                </div>}
             </div>
         )
     }

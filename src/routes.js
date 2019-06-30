@@ -6,7 +6,6 @@ import Home from './components/Home';
 import Contact from './components/Contact';
 import PageContruction from './components/PageContruction';
 import Page404 from './components/Page404';
-import ErrorBoundary from './components/ErrorBoundary';
 
 const AppRouter = () =>
     <App>

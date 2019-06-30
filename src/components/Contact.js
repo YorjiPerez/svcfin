@@ -23,7 +23,7 @@ class Contact extends Component {
                 <section className="bg-white pt-5 pb-5">
                     <div className="container">
                         <div className="row">
-                            <div className="col-12 col-md-6">
+                            <div className="col-12 col-md-6 mb-3">
                                 <h5 className="mb-4">LEAVE US A MESSAGE</h5>
                                 <FormContat />
                             </div>
