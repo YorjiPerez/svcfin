@@ -15,6 +15,10 @@ class IconNav extends Component {
                 <ReactTooltip id='appAndroid' place="left" type="dark">
                     <span>Download Android Service Finance Dealer app for free</span>
                 </ReactTooltip>
+                <a href="//www.youtube.com/watch?v=MVPzDDnaq0c" target="_blank" className="video-play" data-tip data-for='video'><i className="fa fa-youtube"></i></a>
+                <ReactTooltip id='video' place="left" type="dark">
+                    <span>Watch a Preview SVC Mobile App</span>
+                </ReactTooltip>
             </div>
         )
     }

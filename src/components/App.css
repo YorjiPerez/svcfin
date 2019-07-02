@@ -561,7 +561,8 @@ header .dropdown-menu.show {
 .facebook,
 .twitter,
 .apple,
-.android {
+.android,
+.video-play {
     position: absolute;
     right: 0;
 }
@@ -569,7 +570,8 @@ header .dropdown-menu.show {
 .facebook:hover,
 .twitter:hover,
 .apple:hover,
-.android:hover {
+.android:hover,
+.video-play:hover {
     width: 70px;
     transition: width .2s linear;
 }
@@ -590,6 +592,12 @@ header .dropdown-menu.show {
     background: #222;
     color: white;
     top: 150px;
+}
+
+.video-play {
+    background: #ff5e00;
+    color: white;
+    top: 200px;
 }
 
 .content {
