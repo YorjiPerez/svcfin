@@ -65,13 +65,13 @@ class FormContact extends Component {
         e.preventDefault();
 
         if (this.handleValidation()) {
-            this.setState({ messageOk: true });
-            this.setState({ messageFail: false });
 
             //Here AJAX requests
             setTimeout(() => {
                 this.setState({loading: false});
-            }, 2000);
+                this.setState({ messageOk: true });
+                this.setState({ messageFail: false });
+            }, 1000);
             this.setState({loading: true});
             this.setState({ fields: { name: "", email: "", phone: "", subject: "", message: "", company: "" } })
 
@@ -97,7 +97,7 @@ class FormContact extends Component {
                 {this.state["messageOk"]&&<div className="alert alert-success" role="alert">
                  All your data has been sent correctly, one of our agents will contact you, Thank you !
                 </div>}
-                <form name="contactform" className="contact-form" onSubmit={this.contactSubmit.bind(this)} noValidate>
+                <form name="contactform" className="contact-form" onSubmit={this.contactSubmit.bind(this)}>
                     <div className="form-group">
                         <label htmlFor="name">Name:*</label>
                         <input className="form-control" placeholder="Enter your Name" type="text" id="name" onChange={this.handleChange.bind(this, "name")} value={this.state.fields["name"]} required="required" />
