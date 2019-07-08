@@ -17,6 +17,9 @@ class App extends Component {
         $('[data-toggle="offcanvas"]').on('click', function () {
             $('.offcanvas-collapse').toggleClass('open')
         })
+        $('.child-link').on('click', function () {
+            $('.offcanvas-collapse').toggleClass('open')
+        })
     }
     render () {
         const {children} = this.props;

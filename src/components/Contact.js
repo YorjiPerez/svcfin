@@ -30,13 +30,13 @@ class Contact extends Component {
                             <div className="col-12 col-md-6">
                                 <h5 className="mb-4">OUR ADDRESS AND CONTACTS</h5>
                                 <div className="bg-light p-3">
-                                    <strong>Address:</strong> 555 S. Federal Hwy, #200 Boca Raton, FL 33432<br />
-                                    <strong>Phone:</strong> (866) 254 ‒ 0497<br />
-                                    <strong>Fax:</strong> (866) 257 ‒ 8122<br />
-                                    <strong>Email:</strong> info@svcfin.com<br />
-                                    <strong>Hours:</strong> Mon ‒ Fri: 8am ‒ 12 midnight (EST)<br />
-                                    <strong>Sat:</strong> 9am ‒ 11pm (EST)<br />
-                                    <strong>Sun:</strong> 12 noon ‒ 6:30pm (EST)
+                                    <strong><i className="fa fa-map fa-xs fa-fw c-primary"></i> Address:</strong> 555 S. Federal Hwy, #200 Boca Raton, FL 33432<br />
+                                    <strong><i className="fa fa-phone fa-xs fa-fw c-primary"></i> Phone:</strong> (866) 254 ‒ 0497<br />
+                                    <strong><i className="fa fa-phone fa-fax fa-fw c-primary"></i> Fax:</strong> (866) 257 ‒ 8122<br />
+                                    <strong><i className="fa fa-envelope fa-fw c-primary"></i> Email:</strong> info@svcfin.com<br />
+                                    <strong><i className="fa fa-hourglass-half fa-fw c-primary"></i> Hours:</strong> Mon ‒ Fri: 8am ‒ 12 midnight (EST)<br />
+                                    <strong><i className="fa fa-calendar fa-fw c-primary"></i> Sat:</strong> 9am ‒ 11pm (EST)<br />
+                                    <strong><i className="fa fa-calendar fa-fw c-primary"></i> Sun:</strong> 12 noon ‒ 6:30pm (EST)
                                 </div>
                             </div>
                         </div>

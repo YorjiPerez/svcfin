@@ -17,27 +17,27 @@ class Header extends Component {
                     <div className="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
                         <ul className="navbar-nav ml-auto">
                             <li className="nav-item">
-                                <Link className="nav-link" to="/">Home</Link>
+                                <Link className="nav-link child-link" to="/">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/page-contruction">What we finance</Link>
+                                <Link className="nav-link child-link" to="/page-contruction">What we finance</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/page-contruction">Dealer login</Link>
+                                <Link className="nav-link child-link" to="/page-contruction">Dealer login</Link>
                             </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="https://example.com" id="dropdown01"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Calculators</a>
                                 <div className="dropdown-menu  bg-primary-default" aria-labelledby="dropdown01">
-                                    <Link className="dropdown-item" to="/page-contruction">Solar loan calculators</Link>
-                                    <Link className="dropdown-item" to="/page-contruction">Payment calculator</Link>
+                                    <Link className="dropdown-item child-link" to="/page-contruction">Solar loan calculators</Link>
+                                    <Link className="dropdown-item child-link" to="/page-contruction">Payment calculator</Link>
                                 </div>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/contact">Contact Us</Link>
+                                <Link className="nav-link child-link" to="/contact">Contact Us</Link>
                             </li>
                             <li className="nav-item hidden-md">
-                                <Link className="nav-link btn-link" to="/page-contruction">Make a payement</Link>
+                                <Link className="nav-link btn-link child-link" to="/page-contruction">Make a payement</Link>
                             </li>
                         </ul>
                     </div>

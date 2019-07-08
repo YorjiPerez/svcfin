@@ -109,7 +109,7 @@ class FormContact extends Component {
                         <div className="invalid-feedback">{this.state.errors["email"]}</div>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="phone">Phone*:</label>
+                        <label htmlFor="phone">Phone:*</label>
                         <input className="form-control" placeholder="Enter your phone" type="tel" id="phone" onChange={this.handleChange.bind(this, "phone")} value={this.state.fields["phone"]} />
                         <div className="invalid-feedback">{this.state.errors["phone"]}</div>
                     </div>
